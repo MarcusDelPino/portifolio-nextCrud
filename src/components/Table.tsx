@@ -25,10 +25,10 @@ export default function Table({
       <tr
         className={`bg-gradient-to-r from-purple-500 to-blue-500 h-12  text-gray-100 font-medium ${roboto.className}`}
       >
-        <th className={`text-left px-2 `}>Código</th>
-        <th className={`text-left`}>Nome</th>
-        <th className={`text-left`}>Idade</th>
-        {showActions ? <th>Ações</th> : false}
+        <th className={`text-left px-4 `}>Código</th>
+        <th className={`text-left px-4`}>Nome</th>
+        <th className={`text-left px-4`}>Idade</th>
+        {showActions ? <th className={`text-center px-4`}>Ações</th> : false}
       </tr>
     )
   }
@@ -45,9 +45,9 @@ export default function Table({
           ${roboto.className} font-bold
           `}
         >
-          <td className={`text-left px-2`}>{client.id}</td>
-          <td className={`text-left`}>{client.name}</td>
-          <td className={`text-left`}>{client.age}</td>
+          <td className={`text-left px-4`}>{ind + 1}</td>
+          <td className={`text-left px-4`}>{client.name}</td>
+          <td className={`text-left px-4`}>{client.age}</td>
           {showActions ? renderActions(client) : false}
         </tr>
       )
@@ -56,7 +56,7 @@ export default function Table({
 
   const renderActions = (client: Client) => {
     return (
-      <td className={`flex justify-center text-center items-center mt-1`}>
+      <td className={`flex justify-center items-center mt-1`}>
         {selectClient ? (
           <button
             onClick={() => selectClient?.(client)}
